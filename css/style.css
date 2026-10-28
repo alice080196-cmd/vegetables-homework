@@ -1,0 +1,166 @@
+/* 本機字型，不需要另外連網載入。 */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #778a50;
+  --page-background: #edf2c5;
+  --text-color: #7d7d7d;
+  --content-background: #f7fbda;
+}
+
+/* 統一使用 border-box，寬度包含 padding 與 border。 */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--page-background);
+  color: var(--text-color);
+  font-family: "Noto Sans", Arial, sans-serif;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; }
+.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+.site-name {
+  margin: 0;
+  color: var(--primary);
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+.header-tools, .social-icons, .account-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.social-icons img { width: 24px; height: 24px; object-fit: contain; }
+.tool-divider { width: 1px; height: 24px; background: var(--primary); }
+.account-button {
+  padding: 4px 8px;
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+/* 作業只呈現版型，登入按鈕不接資料庫。 */
+.account-button:disabled { opacity: 1; cursor: default; }
+
+/* Navigation */
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 44px;
+  padding-inline: 12px;
+  border-radius: 3px;
+  background: var(--primary);
+}
+.main-navigation a {
+  padding: 12px 24px;
+  color: var(--page-background);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 20px;
+}
+.main-navigation a:hover { background: #687b44; }
+a:focus-visible { outline: 3px solid #354f25; outline-offset: 3px; }
+
+/* 主視覺 */
+.garden-banner { margin-top: 16px; }
+.garden-banner img { width: 100%; height: auto; aspect-ratio: 1120 / 448; object-fit: cover; }
+
+/* 下方雙欄：左右各 528px，中間間距 64px。 */
+.information-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+.section-heading {
+  margin: 0 0 16px;
+  padding: 12px 24px;
+  border-radius: 3px;
+  background: var(--primary);
+  color: var(--page-background);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+/* 三張卡片以 Grid 等分；文字用正常文件流，增加內容也不會被裁掉。 */
+.vegetable-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.vegetable-card { background: var(--content-background); }
+.vegetable-card > img { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; }
+.vegetable-description { padding: 12px; }
+.vegetable-description h3 {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.vegetable-description p { margin: 0 0 12px; font-size: 12px; line-height: 1.5; }
+.vegetable-description p:last-child { margin-bottom: 0; }
+
+/* Contact */
+.contact-panel { padding: 16px; background: var(--content-background); }
+.contact-copy p { margin: 0 0 16px; font-size: 14px; line-height: 1.5; }
+.contact-details {
+  padding-top: 12px;
+  border-top: 1px solid var(--text-color);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.5;
+}
+.contact-details p { margin: 0 0 6px; overflow-wrap: anywhere; }
+.contact-details a { text-decoration: none; }
+.contact-details a:hover { text-decoration: underline; }
+.contact-details .contact-note { margin: 10px 0 0; font-size: 11px; }
+section, #our-garden, #online { scroll-margin-top: 20px; }
+
+/* Footer 橫跨整個視窗。 */
+.site-footer { padding: 24px; background: var(--primary); text-align: center; }
+.site-footer p { margin: 0; color: var(--page-background); font-size: 12px; line-height: 1.5; }
+
+/* 平板、手機：仍保留相同內容，改為上下排列。 */
+@media (max-width: 900px) {
+  .information-layout { grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
+  .main-navigation { flex-wrap: wrap; }
+  .main-navigation a { padding-inline: 16px; }
+}
+@media (max-width: 560px) {
+  .container { width: calc(100% - 32px); }
+  .site-header { align-items: flex-start; flex-direction: column; gap: 12px; padding-top: 20px; }
+  .site-name { font-size: 38px; }
+  .main-navigation { padding: 4px; }
+  .main-navigation a { padding: 9px 12px; font-size: 14px; }
+  .garden-banner img { aspect-ratio: 16 / 9; }
+  .information-layout { margin-top: 24px; }
+  .vegetable-grid { gap: 8px; }
+  .vegetable-description { padding: 10px 8px; }
+  .vegetable-description h3 { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

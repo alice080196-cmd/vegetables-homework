@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover fresh vegetables, simple kitchen ideas, and friendly advice from our garden club.">
+  <title>Vegetables — A little freshness, every day</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 頁首：標誌、社群圖示及課堂示意按鈕 -->
+  <header class="site-header container" id="home">
+    <h1 class="site-name">Vegetables</h1>
+    <div class="header-tools" aria-label="Social media and account">
+      <div class="social-icons" aria-label="Social media icons">
+        <img src="img/btn_facebook.png" width="24" height="24" alt="Facebook">
+        <img src="img/btn_instagram.png" width="24" height="24" alt="Instagram">
+      </div>
+      <span class="tool-divider" aria-hidden="true"></span>
+      <div class="account-tools">
+        <button class="account-button" type="button" disabled title="Account features are not included in this layout exercise">LOGIN</button>
+        <button class="account-button" type="button" disabled title="Account features are not included in this layout exercise">JOIN</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-navigation container" aria-label="Main navigation">
+    <a href="#home" aria-current="page">Home</a>
+    <a href="#our-garden">About Us</a>
+    <a href="#vegetables">Vegetables</a>
+    <a href="#online">Online</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+    <!-- 大圖：使用 img，避免背景圖載入失敗時沒有替代文字 -->
+    <div class="garden-banner">
+      <img src="img/img_main_pumpkin.png" width="1120" height="448" alt="Fresh yellow squash with green stems, gathered in a colorful garden harvest.">
+    </div>
+
+    <div class="information-layout">
+      <!-- 左欄：三張照片，每張下面都有各自的文字說明 -->
+      <section class="vegetable-section" id="vegetables" aria-labelledby="vegetables-title">
+        <h2 class="section-heading" id="vegetables-title">Vegetables</h2>
+        <div class="vegetable-grid">
+          <article class="vegetable-card">
+            <img src="img/img_vegetables_carrot.png" width="165" height="165" alt="Orange carrots stacked together.">
+            <div class="vegetable-description">
+              <h3>Carrots</h3>
+              <p>A little crunch brings a lot of color to the table. Enjoy carrots sliced into a fresh salad, roasted until tender, or simmered in a warming soup.</p>
+              <p>Kitchen tip: keep them in the refrigerator and wash them just before cooking.</p>
+            </div>
+          </article>
+          <article class="vegetable-card">
+            <img src="img/img_vegetables_corn.png" width="165" height="165" alt="Rows of golden corn kernels wrapped in green husks.">
+            <div class="vegetable-description">
+              <h3>Sweet Corn</h3>
+              <p>Golden kernels add a gentle sweetness to everyday meals. Steam a whole cob, grill it with a little butter, or stir the kernels into rice and soup.</p>
+              <p>Kitchen tip: choose fresh green husks and cook soon after buying for the sweetest flavor.</p>
+            </div>
+          </article>
+          <article class="vegetable-card">
+            <img src="img/img_vegetables_pepper.png" width="165" height="165" alt="Glossy yellow bell peppers with green stems.">
+            <div class="vegetable-description">
+              <h3>Bell Peppers</h3>
+              <p>Bright, crisp, and easy to enjoy, bell peppers make a colorful addition to a salad or stir-fry. Roasting brings out their mellow, sweet flavor.</p>
+              <p>Kitchen tip: remove the stem and seeds, then cut into strips for a quick snack.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 右欄：延長介紹文字，分段後保留聯絡資訊 -->
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <h2 class="section-heading" id="contact-title">Contact</h2>
+        <div class="contact-panel">
+          <div id="our-garden" class="contact-copy">
+            <p>At Vegetables, we believe a fresh meal can start with something simple: a handful of seasonal produce, a favorite recipe, and a little curiosity. Our garden club shares easy ideas that help bring more color and variety to your everyday table.</p>
+            <p>From crunchy carrots to golden corn and sweet bell peppers, each vegetable has its own texture and character. Explore our selection, try a new combination, and discover the small pleasures of preparing something fresh at home.</p>
+          </div>
+          <div id="online" class="contact-copy">
+            <p>Planning your next meal or browsing our online selection? We are happy to hear your questions about produce, storage, recipe ideas, or the Vegetables Club. Tell us what you are looking for so we can point you in the right direction.</p>
+            <p>For order enquiries, please include your order number and a short description of your question. For general feedback, simply share your thoughts. Your suggestions help us make our garden community a more welcoming place.</p>
+          </div>
+          <address class="contact-details">
+            <p><span>E-mail :</span> <a href="mailto:hello@vegetables.example">hello@vegetables.example</a></p>
+            <p><span>PHONE :</span> +886-2-0000-0000</p>
+            <p class="contact-note">Contact details are for this student design exercise.</p>
+          </address>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Copyright © 2026 Vegetables. A little freshness, every day.</p>
+  </footer>
+</body>
+</html>
